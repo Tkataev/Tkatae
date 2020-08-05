@@ -1,36 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/icons.css">
     <title>Document</title>
+    <link rel="icon" type="image" href="images\logo2.png">
 </head>
 
 <body>
- 
+       <!--Первый блок-->
 
-    
-      <header style="float: left; margin-right:20px;background-color: grey;">
-       <a href="http://university.innopolis.ru/" target="_blank"><img src="img/logo.png" alt="Логотип"></a> 
-      
-      <div>
-        <div style="float: left; margin-right:20px;">
+ <header>
+     <a href=https://innopolis.university target ="_blank"><img src="img\logo.png" alt="logo"/>
+     </a>
          <nav>
-          <ul> 
-            <li><a href=”#”>ЗАКАЗАТЬ БИЛЕТ</a></li> 
-            <li><a href=”#”>ПРЕИМУЩЕСТВА</a></li>
-            <li><a href=”#”>ФИЛЬМЫ</a></li> 
-            <li><a href=”#”>КОНТАКТЫ</a></li>
-            </ul>
-         </nav> 
-          
-        </div>
-        <sub> Ваш город:</sub>
-        <u>Москва</u> 
-      </header>
+           <ul>
+            <li><a href="#order">ЗАКАЗАТЬ БИЛЕТ</a></li>
+            <li><a href="#venteg">ПРЕИМУЩЕСТВА</a></li>
+            <li><a href="#films">ФИЛЬМЫ</a></li>
+            <li><a href="#contact">КОНТАКТЫ</a></li>
+           </ul>
+            
+         </nav>
+         <sub>Ваш город:</sub>
+         <u>Москва</u> 
+ </header>
       <div>
         <img width="400" src= "img\top_bg.jpg" alt="Первый кинотеатр Инополиса" title="Первый кинотеатр Инополиса"/>
       </div>
@@ -42,15 +40,19 @@
       </div>
      
     </div>
+  <!--Конец первого блока-->
   
-    <footer>
+  
+  <!-- Начало второго блока-->
+
+    
       <div>
         <div>
         <strong><h3>Добро пожаловать!</h3> </strong>
        <em><p>Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.</p> </em> 
         <em><p>Cumque dolorem eum harum laudantium libero molestias saepe soluta? Facere minima optio perferendis quibusdam quis reprehenderit, saepe! Debitis enim optio saepe voluptatibus.</p></em> 
         </div>
-        <div>
+        <div id="venteg">
           <h3><strong>Почему мы?</strong></h3> 
         </div>
        <div><img src="img\b2_icon_1.jpg" alt="Большие экраты" title="Большие экраны"/></div>
@@ -75,71 +77,60 @@
      
       <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At autem cum dolores dolorum eius error expedita illum itaque molestiae mollitia nemo, nostrum officia quas ratione tempora temporibus veritatis vero voluptates.</em> 
        </div>
-       <div>
+      <!--Конец второго блока-->
+
+      <!--Третий блок-->
+       <div id="order">
+      
          <div>
           <h5><strong>Выберите фильм</strong></h5> 
          </div>
-        <style>
-          th, td {
-          border: 1px solid black;
-          padding: 5px 10px;
-          }
-        </style>
-         <table>
-           <caption>Фильмы которые идут в нашем кинотеатре</caption>
-           <thead>
-            <tr>
-              <th>Chesk</th>
-              <th>Начало сеанса</th>
-              <th>Название фильма</th>
-              <th>Жанр</th>
-              <th>Заказать билет</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Chesk</td>
-              <td>10:00</td>
-              <td>
-                <a href="https://www.kinopoisk.ru/film/838/" target="_blank">Человек-паук</a>
-              </td>
-              <td>фантастика, боевик, приключения</td>
-              <td>Заказать билет</td>
-            </tr>
-            <tr>
-              <td>Chesk</td>
-              <td>12:00</td>
-              <td>
-                <a href="https://www.kinopoisk.ru/film/1122114/" target="_blank">Собачья жизнь 2</a>
-              </td>
-              <td>фэнтези, драма, комедия</td>
-              <td>Заказать билет</td>
-            </tr>
-            <tr>
-              <td>Chesk</td>
-              <td>14:00</td>
-              <td>
-                <a href="https://www.kinopoisk.ru/film/846824/" target="_blank">История игрушек 4</a>
-              </td>
-              <td>мультфильм, фэнтези, комедия</td>
-              <td>Заказать билет</td>
-            </tr>
-            <tr>
-              <td>Chesk</td>
-              <td>16:00</td>
-              <td>
-                <a href="https://www.kinopoisk.ru/film/693730/" target="_blank">Люди в черном: Интернэшнл</a>
-              </td>
-              <td>фантастика, боевик, комедия</td>
-              <td>Заказать билет</td>
-            </tr>
-            
-          </tbody>
-          
-         </table>
-         
+     <section>
+      <div class="container">
+        <div class="movie-list">
+          <h2 class="movie-list__header">
+            Выберите фильм
+          </h2>
+          <table class="movie-list__table">
+            <thead>
+             <tr>
+               <th>Time</th>
+               <th>Stuff that will happen</th>
+               <th></th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td>10am - 12pm</td>
+               <td>Introduction and presentations about Envato</td>
+               <td><img src="img/More icon.png" alt="кнопка"></td>
+             </tr>
+             <tr>
+               <td>12pm - 02pm</td>
+               <td>Sessions by honorable guests and Speakers</td>
+               <td><img src="img/More icon.png" alt="кнопка"></td>
+             </tr>
+             <tr>
+               <td>02pm - 03pm</td>
+               <td>Break and Mingle time with the authors</td>
+               <td><img src="img/More icon.png" alt="кнопка"></td>
+             </tr>
+             <tr>
+               <td>03pm - 05pm</td>
+               <td>Portfolio Review, Rewards and Ending Presentation</td>
+               <td><img src="img/More icon.png" alt="кнопка"></td>
+             </tr>
+             
+           </tbody>
+           
+          </table>
+        </div>    
+      </div>       
+     </section>      
          <div><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid eum facere obcaecati quam rem repellendus veritatis. Aliquam beatae, delectus dignissimos enim exercitationem mollitia nisi pariatur quaerat quam, qui quibusdam sunt!</em></div>
-       
+       <!--Конец третьего блока-->
+
+       <!--Четвертый блок-->
          </div>
        <div>
          <img src="img/b4_img.jpg" alt="Подарок">
@@ -149,6 +140,12 @@
          <div><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam aspernatur, cum, cupiditate excepturi expedita libero mollitia nesciunt nihil nobis obcaecati quasi ratione reprehenderit sequi sint, tenetur unde velit veniam!</em></div>
        </div>
        <div>
+        <button>Получить подарок</button> 
+       </div>
+       <!--Конеч четвертого блока-->
+
+       <!--Пятый блок-->
+       <div id="films">
          <div><strong>Фильмы</strong></div>
          <div><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci alias, animi, commodi eius ipsum, laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae, suscipit!
           <div>
@@ -184,49 +181,53 @@
          </em></div>
    
        </div>
-    </footer>
-
-    <section>
+        
+       <!--Конеч пятого блока-->
+       <!--Шестой блок-->
+       <footer>
+        <section>
       
-      <div>тут будет карта</div>
-      
-      <img src="img\1920x450.png" alt="Карта" title="Карта"/>
+          <div id="contact"> тут будет карта</div>
+          
+          <img src="img\1920x450.png" alt="Карта" title="Карта"/>
+          <div>
+           
+    <form action="/api/user/create">
       <div>
-       
-<form action="/api/user/create">
-  <div>
-    <input type="text" placeholder="Имя*" name="login" required>
-  </div>
-  
-    <select name="some" id="">
-      <option value="1">Выбор1</option>
-      <option value="2">Выбор2</option>
-      <option value="3">Выбор3</option>
-    </select>
-    <div>
-      
-      <input type="radio" name="radio1">Выбор1
-      <input type="radio" name="radio1">Выбор2
-    </div>
-    <div>
-      <textarea name="" placeholder="Комментарий" name="description"></textarea>
-    </div>
-  <div>
-    <input type="checkbox">
-  </div>
-  <div>
-    <input type="file">
-  </div>
-  <div>
-    <input type="submit">
-    <button type="submit">Отправить</button>
-  </div>
-  </div>  
-  
-
-</form>
+        <input type="text" placeholder="Имя*" name="login" required>
       </div>
-    </section>
+      
+        <select name="some" id="">
+          <option value="1">Выбор1</option>
+          <option value="2">Выбор2</option>
+          <option value="3">Выбор3</option>
+        </select>
+        <div>
+          
+          <input type="radio" name="radio1">Выбор1
+          <input type="radio" name="radio1">Выбор2
+        </div>
+        <div>
+          <textarea name="" placeholder="Комментарий" name="description"></textarea>
+        </div>
+      <div>
+        <input type="checkbox">
+      </div>
+      <div>
+        <input type="file">
+      </div>
+      <div>
+        <input type="submit">
+        <button type="submit">Отправить</button>
+      </div>
+      </div>  
+      
+    
+    </form>
+          </div>
+        </section>
+       </footer>
+  <!--Конец шестого блока-->
 
 
 
