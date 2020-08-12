@@ -1,60 +1,246 @@
-header {
-    background-color: darkgrey;
-}
-body{
-    font-family: 'Roboto', sans-serif;
-}
-@font-face{
-    font: 'Roboto';
-    src: url('../fonts/Roboto-Regular.ttf') format("truetype");
-    font-weight: 400;
+body {
+    font-family: "Roboto", sans-serif;
 }
 
-@font-face{
-    font: 'Roboto';
-    src: url('../fonts/Roboto-Bold.ttf') format("truetype");
+/* Шрифты */
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/roboto-black.eot");
+	src: url("../fonts/roboto-black.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/roboto-black.otf") format("opentype"),
+		url("../fonts/roboto-black.svg") format("svg"),
+		url("../fonts/roboto-black.ttf") format("truetype"),
+		url("../fonts/roboto-black.woff") format("woff"),
+		url("../fonts/roboto-black.woff2") format("woff2");
+	font-weight: 900;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/roboto-bold.eot");
+    src: url("../fonts/roboto-bold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/roboto-bold.otf") format("opentype"), 
+        url("../fonts/roboto-bold.svg") format("svg"), 
+        url("../fonts/roboto-bold.ttf") format("truetype"), 
+        url("../fonts/roboto-bold.woff") format("woff"),
+        url("../fonts/roboto-bold.woff2") format("woff2"); 
     font-weight: 700;
 }
-.container{
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/roboto-thin.eot");
+	src: url("../fonts/roboto-thin.eot?#iefix") format("embedded-opentype"), 
+		url("../fonts/roboto-thin.otf") format("opentype"), 
+		url("../fonts/roboto-thin.svg") format("svg"), 
+		url("../fonts/roboto-thin.ttf") format("truetype"),
+		url("../fonts/roboto-thin.woff") format("woff"), 
+		url("../fonts/roboto-thin.woff2") format("woff2"); 
+	font-weight: 100;
+} 
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/roboto-regular.eot"); 
+	src: url("../fonts/roboto-regular.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/roboto-regular.otf") format("opentype"),
+		url("../fonts/roboto-regular.svg") format("svg"), 
+		url("../fonts/roboto-regular.ttf") format("truetype"), 
+		url("../fonts/roboto-regular.woff") format("woff"), 
+		url("../fonts/roboto-regular.woff2") format("woff2"); 
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../fonts/roboto-light.eot");
+	src: url("../fonts/roboto-light.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/roboto-light.otf") format("opentype"),
+		url("../fonts/roboto-light.svg") format("svg"), 
+		url("../fonts/roboto-light.ttf") format("truetype"), 
+		url("../fonts/roboto-light.woff") format("woff"), 
+		url("../fonts/roboto-light.woff2") format("woff2"); 
+	font-weight: 300;
+}
+
+/* Сетка макета */
+.container {
     max-width: 1030px;
     margin: 0 auto;
+    padding: 0 15px;
 }
-.movie-list__header{
-    color: #252525;
+
+/* Общие стили */
+.title {
     font-size: 50px;
     font-weight: 700;
-    text-align: center;
-    margin: 90px;
-    vertical-align: middle;
+    color: #252525;
 }
-.movie-list__table{
+.title__left {
+    text-align: left;
+}
+
+/*Первый блок*/
+.block1 {
+    min-height: 768px;
+    background: url(../img/Layer\ 6.jpg) center center/cover no-repeat;
+    padding: 54px 0 361px 0;
+    overflow: hidden;
+}
+
+.block1__header {
+    display: inline-block;
+    width: 100%;
+}
+.block__col1 {
+    width: 30%;
+    float: left;
+}
+.block__col2 {
+    float: right;
+}
+
+.block1__nav {
+    line-height: 45px;
+}
+
+.block1__nav li {
+    display: inline-block;
+    padding: 0 17px;
+}
+
+.block1__nav li a {
+    font-size: 15px;
+    font-weight: 100;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.block1__nav li a:hover {
+    color: #90d23d;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.block__h1 {
+    font-size: 80px;
+    font-weight: 100;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 149px;
+}
+
+.block__h2 {
+    font-size: 50px;
+    font-weight: 300;
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 1.1px;
+}
+/* Второй блок*/
+
+
+
+/* Таблица */
+.movie-list__header {
+    text-align: center;
+    margin: 155px 0 80px 0;
+}
+
+.movie-list__table {
     width: 100%;
     border-collapse: collapse;
     border-radius: 15px;
     overflow: hidden;
-    text-align: center;
-    
+    vertical-align: top;
 }
-.movie-list__table th{
+
+ .movie-list__table th {
     color: #fff;
-    background: #a3cc40;
+    background-color: #a3cc40;
     font-size: 30px;
-    font-weight: 700;
-    height: 75px;
-    vertical-align: middle;
-    text-align: center;
+    font-weight: 900;
+    padding: 22px 0 15px 0px;
 }
-.movie-list__table tr:nth-child(odd) {
-    height: 75px;
+
+.movie-list__table_one {
     font-size: 22px;
+    font-weight: 400;
+    text-align: center;
+    color: #ffffff;
+}
+
+.movie-list__table_one-width {
+    width: 25%;
+}
+
+.movie-list__table_one-width2 {
+    text-align: left;
+}
+.dark {
+    background-color: #373737;
+}
+
+.light {
+    background-color: #4b4d4f;
+}
+
+.green {
+    background-color: #6c6c6c;
+}
+
+.movie-list__table_one-time {
+   padding-top: 25px;
+   padding-bottom: 24px; 
+   padding-right: 39px;
+}
+
+.movie-list__table_one-text {
+    text-align: left;
+    padding-left: 41px;
+    padding-top: 7px;
+}
+
+.movie-list__table_one-plus {
+    width: 13%;
+    padding-top: 14px;
+}
+
+.movie-list__table_one-link {
+    padding-left: 39px;
+}
+
+.movie-list__table .movie-list__table_up:after {
+    content: '\25B2';
+    font-size: 23px;
     color: #fff;
-    background: #373737;
+}
+
+.movie-list__table .movie-list__table_down:after {
+    content: '\25BC';
+    font-size: 23px;
+    color: #fff;
+}
+
+.movie-list__table_up, .movie-list__table_down {
+    background-color: transparent;
+    border: none;
+}
+
+.movie-list__table a {
+   text-decoration: none;
+   color: white;
+}
+
+.paragraph {
+    font-size: 14px;
+    font-weight: 300;
     text-align: center;
-  }
-  .movie-list__table tr:nth-child(even) {
-      height: 75px;
-      color: #fff;
-      font-size: 22px;
-    background: #4b4d4f;
-    text-align: center;
-  }
+    color: #242424;
+    margin-top: 40px;
+}
+
+/* Четвертый блок  */
+.block4__img {
+    width: 320px;
+}
