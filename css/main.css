@@ -79,6 +79,24 @@ body {
 .title__left {
     text-align: left;
 }
+.zaglywka__right-color{
+    text-align: right;
+    color: #ffffff;
+    margin-top: 2.4rem;
+}
+.zaglyka{
+    font-size: 0.87rem;
+    font-weight: 300;
+    text-align: center;
+    color: #242424;
+    margin-top: 1rem;
+}
+.zaglywka__left{
+    text-align: left;
+    margin-top: 2.25rem;
+    margin-bottom: 4.9rem;
+}
+
 
 /*Первый блок*/
 .block1 {
@@ -153,7 +171,7 @@ body {
         justify-content: space-between;
         margin-top: 7.75rem;}
 .block2__item {
-    padding: 0 15px;
+    padding: 0 px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -315,7 +333,7 @@ text-align: center;
     margin-top: 40px;
 }
 
-/* Четвертый блок  */
+
 /* Четвертый блок  */
 
 .block4 {
@@ -385,77 +403,84 @@ text-align: center;
 .block5 {
     padding: 5.375rem 0 6.25rem 3.25rem; 
  }
- 
  .block5__table {
-     display: flex;
-     flex-wrap: wrap;
-     margin-top: 4.9rem;
+     margin-top: 4.5rem;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     grid-row-gap: 2rem;
+     grid-column-gap: 2rem;
+ }
+ .block5__title{
+
+ }
+ .block5__table-film {
+     width: 18,5rem;
+     height: 18,5rem;
+ }
+ .block5__poster img {
+     display: block;
+     height: 100%;
+     width: 100%;
  }
  .block5__film {
-     flex: 0  0 33.3%;
      position: relative;
      overflow: hidden;
      border-radius: 0.75rem;
-     margin-bottom: 2.5rem;
  }
- 
- 
- .block5__poster {
-     border-radius: 1.25rem;
-     width: 18.5rem;
-     height: 18.5rem;
- }
- 
- 
  .block5__cosial {
      position: absolute;
-     left: 0;
-     right: 0;
-     top: 0;
-     bottom: 0;
-     border-radius: 0.93rem;
+     top: 0%;
      background-color: rgba(144, 210, 61, 0.82);
      padding: 1.18rem;
-     display: none;
      overflow: hidden;
-     overflow-y: auto;
-     width: 259px;
-     height: 258px;
+     color: #fff;
+     width: 100%;
+     height: 100%;
+     transform: translateY(100%);
  }
  .block5__film:hover .block5__cosial{
-     display: block;
-     transform: 0.2s;
+     transform: translateY(0%);
+     top: 0;
+     transition: 0.2s;
  } 
- 
  .block5__cosial-name {
-     font-size: 2.06rem;
+     font-size: 1.9rem;
      font-weight: 900;
      text-align: left;
      color: #fefefe;
  }
- 
  .block5__cosial-band {
      width: 5.18rem;
      height: 0.375rem;
      background-color: #ffffff;
      margin-top: 0.62rem;
  }
- 
  .block5__cosial-pin {
-     margin-top: 6.87rem;
+     top: 15.125rem;
+     position: absolute;
+     font-size: 27px;
+     margin: 0 13px;
  }
  .block5__cosial-pin_icons {
-     width: 1.9375rem;
-     height: 1.9375rem;
-     margin-left: 0.125rem;
+     width: 32px;
+     height: 31px;
+     margin-left: 0.1rem;
+     box-shadow: 0px 1px 1px 0 rgba(0, 0, 0, 0.25);
+     background-color: #ffffff;
+     border-radius: 50%;
  }
- 
+ .block5__cosial-pin_icons img {
+     height: 17px;
+     width: 31px;
+ }
  .block5__cosial-definition {
      margin-top: 0.93rem;
      font-size: 1.125rem;
      font-weight: 500;
      color: #fefefe;
  }
+ 
+ /*footer*/
  .footer {
     min-height: 13.75rem;
     background-color: #90d23d;
