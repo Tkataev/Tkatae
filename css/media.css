@@ -1,18 +1,33 @@
 @media screen and (max-width: 1000px) {
-  
+    .block2__plus img {
+        display: block;
+        margin: 0 auto;
+    }
     .block5 {
         padding: 4rem 0 6rem 0;
     }
 }
+@media screen and (max-width:905px) {
+    .block2__card {
+        width: 391px;
+    }
+    .movie-list__table {
+        width: 905px;
+    }
+    .movie-list {
+        overflow-x: auto;
+    }
+}
+@media screen and (max-width:820px) {
+    .block2__location {
+        display: block;
+        margin-top: 4rem;   
+    }
+}
+ 
  @media screen and (max-width:800px) {
    .block__h1 {
         font-size: 4rem;
-    }
-   .movie-list {
-        overflow-x: auto;
-    }
-    .movie-list__table {
-        width: 800px;
     }
     .block1__nav li {
         padding: 0 0.7rem;
@@ -24,9 +39,13 @@
     font-size: 2.8rem;
     }
     .block2__card {
-        width: 27rem;
+        width: 26rem;
         padding: 1rem;
         min-height: 11rem;
+        top: -245px;
+    }
+    .gift__img {
+        left: 30px;
     }
     .block5__table {
        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
@@ -34,6 +53,23 @@
     .block5__table-film {
         width: 16.5rem;
         height: 16.5rem;
+    }
+    .block5__cosial {
+        width: auto;
+    }
+    .block5__cosial-pin {
+        top: 13.5rem;
+    }
+}
+@media screen and (max-width:780px) {
+    .gift__img {
+        top: 31px;
+    }
+}
+@media screen and (max-width:730px) {
+    .gift__img {
+        top: 12px;
+        left: 20px;
     }
 }
 @media screen and (max-width:700px) {
@@ -55,6 +91,7 @@
     .block2__card {
         width: 20rem;
         min-height: auto;
+        top: -260px;
     }
     .block2__descr {
         font-size: 2rem;
@@ -76,14 +113,20 @@
     }
 
 }
-@media screen and (max-width:780px) {
+@media screen and (max-width: 680px) {
     .gift__img {
-        top: 31px;
+        top: 0px;
+        width: 270px;
     }
 }
+ 
 @media screen and (max-width:600px) {
     .block1 {
-        min-height: 38rem;
+        min-height: 41.1rem;
+    }
+    .block1:after {
+        content: "";
+        border-bottom: 5.5rem solid #fff;
     }
     .block__col1 {
         float: right;
@@ -128,13 +171,13 @@
         top: 0;
         bottom: 0;
         left: 0;
-        padding: 2rem;
-        background-color: rgb(0, 0, 0, .9);
+        padding: 1rem 2rem;
+        background-color: rgb(0, 0, 0, .8);
         z-index: 100;
         text-align: left;
         transform: translateX(0%);
         transition: 0.2s;
-        height: 87vh;
+        height: 11.5rem;
     }
     .block1__nav li {
         display: block;
@@ -143,9 +186,10 @@
         margin-left: 0;
         margin-top: 0.75rem;
     }
-   /* .block1__nav_close {
-       transform: translateX(100%);
-   } */
+    .block1__nav_close li {
+        margin-bottom: 1.6rem;
+        text-align: center;
+    }
    .block2__tit {
         text-align: center;
     }
@@ -153,29 +197,32 @@
         display: none;
     }
     .block2__tit {
-        margin-top: 4rem;
+        margin-top: 1rem;
         text-align: center;
-    }
-    .block2__location {
-        display: block;
-        margin-top: 4rem;
-    }  
+    } 
     .block2__plus {
         text-align: center;
         margin: 0 auto;
         margin-top: 28px;
         width: auto;
     }
-    .block2__img {
-        display: block;
-        margin: 0 auto;
-        height: 13rem;
-    }
     .block2__text {
         margin-top: 2rem;
     }
     .paragraph {
         font-size: 1rem;
+    }
+    .block4 {
+        margin-top: 4.56rem;
+        min-height: 45.5rem;
+    }
+    .block4:before {
+        content: "";
+        border-top: 6.6rem solid #fff;
+    }
+    .block4:after {
+        content: "";
+        border-bottom: 5.6rem solid #fff;
     }
     .block4__ticket {
         width: auto;
@@ -191,6 +238,7 @@
         width: 11rem;
         height: 3rem;
         font-size: 1rem;
+        margin-top: 1.5rem;
     }
     .block5__table {
         grid-template-columns: 1fr 1fr;
@@ -203,6 +251,17 @@
         width: 15rem;
     }
 }
+@media screen and (max-width:500px) {
+    .gift__img {
+    top: 10px;
+    width: 13rem;
+    }
+}
+@media screen and (max-width: 455px) {
+    .block4__button {
+        margin-top: 1rem;
+    }
+}
 @media screen and (max-width:450px) {
     .block__h1 {
         font-size: 2.5rem;
@@ -211,8 +270,11 @@
     .block__col1 {
         display: none;
     }
+    .movie-list__header {
+        margin: 2.7rem 0 3.9rem -1rem;
+    }
     .block4 {
-    min-height: 47rem;
+    min-height: 44rem;
     }
     .block4__gift {
         margin-top: 8rem;
@@ -241,8 +303,35 @@
         width: 11rem;
         height: 11rem;
     }
+    .block5__cosial {
+        padding: 0.5rem;
+    }
+    .block5__cosial-name {
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+    .block5__cosial-band {
+        height: 0.2rem;
+        margin-top: 0.3rem;
+    }
+    .block5__cosial-definition {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+    }
+    .block5__cosial-pin {
+        margin: 0;
+        top: 8.8rem;
+        font-size: 22px;
+    }
+    .block5__cosial-pin_img {
+        height: 14px;
+        width: 23px;
+    }
     .footer {
-        min-height: 10rem;
+        min-height: 8rem;
+    }
+    .footer__cosial {
+        padding-top: 1rem;
     }
     .footer__icons {
         width: 41px;
@@ -257,7 +346,34 @@
         font-size: 1rem;
     }
 }
+@media screen and (max-width:420px) {
+    .block4__button {
+        float: left;
+        width: 9rem;
+        height: 2.5rem;
+        font-size: 0.85rem;
+        margin-top: 1rem;
+    }
+}
+@media screen and (max-width:370px) {
+    .paragraph {
+        font-size: 0.85rem;
+    }
+}
+@media screen and (max-width:345px) {
+    .block4__gift {
+        margin-top: 8.5rem;
+        font-size: 2rem;
+        margin-bottom: -1rem;
+    }
+}
 @media screen and (max-width:320px) {
+    .block1 {
+        min-height: 113vh;
+    }
+    .block__h1 {
+        margin-top: 8.5rem;
+    }
     .block__h2 {
         font-size: 1.5rem;
     }

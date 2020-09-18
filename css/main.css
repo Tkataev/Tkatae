@@ -80,17 +80,17 @@ body {
 .paragraph__right-color {
     text-align: right;
     color: #ffffff;
-    margin-top: 2.4rem;
+    margin-top: 3.5rem;
 }
 .paragraph__left {
     text-align: left;
-    margin-top: 2.25rem;
+    margin-top: 2.2rem;
     margin-bottom: 4.9rem;
 }
 /*Первый блок*/
 .block1 {
     position: relative;
-    min-height: 44.81rem;
+    min-height: 45rem;
     background: url(../img/top_bg.jpg) center center/cover no-repeat;
     padding-top: 3.375rem;
     overflow: hidden;
@@ -101,7 +101,7 @@ body {
     bottom: 0;
     left: 0;
     border-left: 100vw solid transparent;
-    border-bottom: 7.55rem solid #fff;
+    border-bottom: 8.4rem solid #fff;
 }
 .block1__header {
     display: inline-block;
@@ -152,14 +152,13 @@ body {
 /* Второй блок */
 .block2__card {
     position: absolute;
-    background-color: #fff;
-    width: 28.4rem;
-    box-shadow: 0px 1px 2px 0 rgba(35, 31, 32, 0.65);
+    right: 13px;
+    top: -201px;
+    width: 455px;
+    min-height: 207px;
+    padding: 1.9rem;
+    box-shadow: 0px 1px 2px 0px rgba(35, 31, 32, 0.65);
     background-color: #ffffff;
-    top: -12.62rem;
-    right: 0;
-    padding: 1.87rem;
-    min-height: 12.93rem;
 }
 .block2__descr {
     font-size: 2.5rem;
@@ -173,21 +172,33 @@ body {
 .block2__location {
     display: flex;
     justify-content: space-between;
-    margin-top: 7.75rem;
+    margin-top: 8rem;
     overflow: hidden;
 }
 .block2__plus {
-    width: 33%;
+    flex: 1 0 0;
+    flex-wrap: wrap;
     padding: 0 0.93rem;
 }
 .block2__img:hover {
     transform: scale(1.07);
     transition: 0.3s;
 }
-.block2__img {
+.block2__plus img {
     display: block;
-    margin: 0 auto;
-    height: 11.31rem;
+    height: 205px;
+}
+.block2__img_left {
+    margin-left: 2.7rem;
+}
+.block2__img_center {
+    margin-left: 4.5rem;
+}
+.block2__img_right {
+    margin-left: 4rem;
+}
+.block2__text {
+    margin-top: -1.5rem;
 }
 .block2__short-title {
     font-size: 2.18rem;
@@ -197,7 +208,7 @@ body {
     margin-top: 3.87rem;
 }
 .block2__tit {
-    margin-top: 4.43rem;
+    margin-top: 4.1rem;
 }
 
 /* Третий блок */
@@ -206,7 +217,7 @@ body {
 }
 .movie-list__header {
     text-align: center;
-    margin: 7.7rem 0 5rem 1.37rem;
+    margin: 7.8rem 0 4.9rem 1.8rem;
 }
 /* Таблица */
 .movie-list__table {
@@ -221,7 +232,7 @@ body {
     background-color: #a3cc40;
     font-size: 1.87rem;
     font-weight: 900;
-    padding: 1.49rem 0 1.1rem 0px;
+    padding: 1.3rem 0 1.1rem 5px;
 }
 .movie-list__table_one {
     font-size: 1.375rem;
@@ -245,7 +256,7 @@ body {
     background-color: #6c6c6c;
 }
 .movie-list__table_one-time {
-   padding-bottom: 1.25rem; 
+   padding-bottom: 1.35rem; 
    padding-right: 2.43rem;
 }
 .movie-list__table_one-text {
@@ -299,8 +310,8 @@ body {
     overflow: hidden;
     position: relative;
     background: url(../img/ticket.jpg) center center/cover no-repeat;
-    margin-top: 9.56rem;
-    min-height: 43.56rem;
+    margin-top: 8.8rem;
+    min-height: 44.85rem;
 }
 .block4:before {
     content: "";
@@ -308,7 +319,7 @@ body {
     top: 0;
     left: 0;
     border-right: 100vw solid transparent;
-    border-top: 7.55rem solid #fff;
+    border-top: 8.8rem solid #fff;
 }
 .block4:after {
     content: "";
@@ -316,14 +327,14 @@ body {
     bottom: 0;
     left: 0;
     border-left: 100vw solid transparent;
-    border-bottom: 7.55rem solid #fff;
+    border-bottom: 8.4rem solid #fff;
 }
 .block4__ticket {
     width: 41.56rem;
     float: right;
 }
 .block4__gift {
-    margin-top: 8.2rem;
+    margin-top: 9rem;
     font-size: 3.125rem;
     font-weight: 900;
     color: #ffffff;
@@ -339,7 +350,7 @@ body {
     text-align: center;
     color: #ffffff;
     border: none;
-    margin-top: 3rem;
+    margin-top: 2.7rem;
     float: right;
 }
 .block4__button:hover {
@@ -350,7 +361,7 @@ body {
 
 /* Пятый блок */
 .block5 {
-   padding: 5.375rem 0 6.25rem 3.25rem; 
+   padding: 4.7rem 0 6.25rem 3.25rem; 
    overflow: hidden;
 }
 .block5__table {
@@ -474,4 +485,84 @@ body {
     font-weight: 300;
     text-align: center;
     color: #ffffff;
+}
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .7);
+}
+.modal__form {
+    max-width: 22.5rem;
+    padding: 1.25rem;
+}
+.input-wrap {
+    margin: 0 0 2rem;
+}
+.input-text {
+    font-size: .95rem;
+    color: #6c6c6c;
+    padding: 0.75rem 0.55rem;
+    border: 1px solid #bebebe;
+    border-radius: 0.25rem;
+    width: 100%;
+    transition: 0.2s;
+}
+.button1 {
+    display: inline-block;
+    background: #90d23d;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.6rem;
+    font-size: 1.5rem;
+    transition: 0.2s;
+    border: 0.1rem solid #90d23d;
+    cursor: pointer;
+}
+.hidden {
+    display: none;
+}
+.close {
+    color: #000;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+}
+#name {
+    width: 93%;
+}
+.popup-close_img {
+    width: 21px;
+    height: 21px;
+}
+.order-form {
+    background: rgb(255, 255, 255);
+    border-radius: 14px;
+    box-shadow: 1px 0px 5px rgb(125, 125, 125);
+    box-shadow: border-box;
+    height: 360px;
+    width: 320px;
+    padding: 30px 20px;
+    margin: 150px auto;
+    position: relative;
+}
+.popup-error-message {
+    color: #cc0033;
+    font-size: .9vw;
+    line-height: 25px;
+}
+.popup-error-message {
+    display: none;
+}
+.error input {
+    background-color: #fce4e4;
+    border:1px solid #cc0033;
+    outline: none;
+}
+.error .popup-error-message {
+    display: block;
 }

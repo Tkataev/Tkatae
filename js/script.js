@@ -7,10 +7,10 @@ $(document).ready(function(){
         ],
         responsive:{
             0:{
-                items:1
+                items:1,
             },
             600:{
-                items:2
+                items:2,
             },
             1000:{
                 items:3
@@ -19,40 +19,38 @@ $(document).ready(function(){
     });
 });
 
-// const genre_1 = 'фентези';
-// const genre_1 = 'драма';
-// const genre_1 = 'комедия';
-// const genre_1 = 'мультфильм';
-// const genre_1 = 'боевик';
-// const films = [
-//     {
-//         start: '10.00',
-//         name: 'Человек-паук',
-//         genre: [
-//             0,
-//             1,
-//             2
-//         ]
-//     },
-//     {
-//         start: '12.00',
-//         name: 'Собачья жизнь 2',
-//         genre: [
-//             0,
-//             1,
-//             2
-//         ]
-//     },
-//     {
-//         start: '14.00',
-//         name: 'История игрушек 4',
-//         genre: [
-//             0,
-//             1,
-//             2
-//         ]
-    
-// ]
+const closePopurButton = document.getElementById('popup-close');
+const openPopurButton = document.getElementById('popup-open');
+const sendForm = document.getElementById('submit');
 
-// document.getElementById('film_start_1');
-// film_start_1.innerHTML = film[0].start
+const popup = document.getElementById('popup');
+closePopurButton.onclick = function(event) {
+    event.preventDefault();
+    popup.classList.add('hidden');
+};
+
+openPopurButton.onclick = function(event) {
+    event.preventDefault();
+    popup.classList.remove('hidden');
+};
+
+sendForm.onclick = function(event) {
+    event.preventDefault();
+    let name = document.getElementById('name');
+    let nameParent = name.parentNode;
+    let select = document.getElementById('select');
+    let agree = document.getElementById('agree');
+    
+    nameParent.classList.remove('error');
+    nameParent.getElementsByClassName('popup-error-message')[0].innerHTML = '';
+    if(!checkInput(name.value)){
+        nameParent.classList.add('error');
+        nameParent.getElementsByClassName('popup-error-message')[0].innerHTML = 'Заполните поле Имя';
+    }
+};
+
+function checkInput(value) {
+    if (value)
+        return true;
+    return false
+}
