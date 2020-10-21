@@ -108,18 +108,34 @@ body {
     width: 100%;
 }
 .block__col1 {
-    width: 30%;
+    width: 25%;
     float: left;
 }
 .block__col2 {
-    float: right;
+    float: left;
+    width: 50%;
+}
+.block__col3 {
+    width: 25%;
+    float: left;
+}
+.block__city {
+    padding: 0.8rem 0 0;
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 100;
+}
+.block__city a {
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 100;
 }
 .block1__nav {
     line-height: 2.81rem;
 }
 .block1__nav li {
     display: inline-block;
-    padding: 0 1.1rem;
+    padding: 0 0.5rem;
 }
 .block1__nav li a {
     font-size: 0.93rem;
@@ -250,10 +266,6 @@ body {
 .green {
     background-color: #6c6c6c;
 }
-/* .movie-list__table_one-time {
-   padding-bottom: 1.35rem; 
-   padding-right: 2.43rem;
-} */
 .movie-list__table_one-text {
     text-align: left;
     padding-top: 0.43rem;
@@ -547,7 +559,7 @@ body {
 .popup-error-message {
     color: #cc0033;
     font-size: .9vw;
-    line-height: 25px;
+    line-height: 20px;
 }
 .popup-error-message {
     display: none;
@@ -559,6 +571,9 @@ body {
 }
 .error .popup-error-message {
     display: block;
+}
+.tickets-error {
+    text-align: center;
 }
 .booking {
     position: fixed;
@@ -580,7 +595,7 @@ body {
 }
 .cinema-tickets {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 .square {
     display: inline-block;
@@ -588,14 +603,10 @@ body {
     padding-top: 3px;
 	width: 30px;
 	height: 30px;
-    background: #a3cc40;
+    background: rgba(144, 210, 61, 0.82);
     border: 1px solid #0a0a0a;
     margin: 2px;
 }
-.square:hover {
-    background-color:  #4b4d4f;
-}
-
 .place-taken {
     display: flex;
     justify-content: space-evenly;
@@ -604,18 +615,18 @@ body {
 .place-taken p {
     margin-top: 8px;
 }
-.bought {
-    background-color: #4b4d4f;
-}
 .reserve {
-    background-color: #a3cc40;
+    background-color:  #f3f197;
 }
 .clic {
-    background-color:  #ffa500;
+    background-color:  #fff;
+}
+.busy {
+    background-color:  #4b4d4f;
 }
 .modal-form {
     max-width: 22.5rem;
-    padding: 1.25rem; 
+    padding: 1rem; 
 }
 
 .modal-form div {
@@ -651,4 +662,47 @@ body {
     border: 0.1rem solid #90d23d;
     cursor: pointer;
     margin-top: 20px;
+}
+.purchase-form h3 {
+    margin-top: 2rem;
+    font-size: 1rem;
+    text-align: center;
+}
+.purchase-form {
+    width: 10rem;
+    height: 6rem;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 30px 20px;
+    margin: 320px auto;
+    position: relative;
+}
+.modal-content {
+    width: 12rem;
+    height: 6rem;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 30px 20px;
+    margin: 250px auto;
+    position: relative;
+}
+.modal-header {
+    font-size: .95rem;
+    color: rgb(55, 55, 55);
+    margin-top: 0.3rem; 
+}
+.modal-body {
+    margin-top: 0.6rem;
+}
+.search_result {
+    margin-top: 0.3rem;
+}
+.ajax-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, .8);
+    z-index: 1000000;
 }

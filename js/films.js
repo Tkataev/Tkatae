@@ -16,7 +16,7 @@ const getFilmById = function (id) {
   return new Promise(function(resolve, reject){
         fetch(`${url}/films/${id}`, {
           headers: {
-            "X-API-KEY": "5f2df07b-6b31-442c-a7f0-547a878cae6b"
+            "X-API-KEY": "f540ca61-9e48-4ef0-bf68-1c4dbafad1b5"
           }
         }).then(response => response.json()).then(resolve);
   });

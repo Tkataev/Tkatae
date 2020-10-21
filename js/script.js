@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
     $(".owl-carousel").owlCarousel({
         nav: true,
@@ -46,7 +45,7 @@ sendForm.onclick = function(event) {
     nameParent.getElementsByClassName('popup-error-message')[0].innerHTML = '';
     if(!checkInput(name.value)){
         nameParent.classList.add('error');
-        nameParent.getElementsByClassName('popup-error-message')[0].innerHTML = 'Заполните поле Имя';
+        nameParent.getElementsByClassName('popup-error-message')[0].innerHTML = 'Заполните Имя полностью';
     }
 };
 

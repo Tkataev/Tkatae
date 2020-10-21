@@ -26,13 +26,18 @@
                     </div>
                     <nav class="block1__nav block1__nav_close">
                         <ul>
-                            <li><a href="#ticket">Event Details</a></li>
-                            <li><a href="#work">Speakers</a></li>
-                            <li><a href="#film">Sponsors</a></li>
-                            <li><a href="#contact">Past Events</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#ticket">ЗАКАЗАТЬ БИЛЕТ</a></li>
+                            <li><a href="#work">ПРЕИМУЩЕСТВА</a></li>
+                            <li><a href="#film">ФИЛЬМЫ</a></li>
+                            <li><a href="#contact">КОНТАКТЫ</a></li>
                         </ul>
                     </nav>
+                </div>
+                <div class="block__col3">
+                    <p class="block__city">
+                        <span>Ваш город: </span>
+                        <a href="#" id="city_name" data-fancybox data-src="#choose_city">не выбрано</a>
+                    </p>
                 </div>
             </header>
 
@@ -158,7 +163,7 @@
                 laudantium neque nihil omnis perferendis sed sequi tempore! Ad ea esse ex inventore repudiandae,
                 suscipit!
             </p>
-            <div class="block5__table owl-carousel" id="filmsNew"></div>
+            <div class="block5__table" id="filmsNew"></div>
         </div>
     </section>
 
@@ -194,34 +199,48 @@
             </p>
         </div>
     </footer>
+    <!-- Форма получить подарок  -->
     <div id='popup' class="popup hidden">
         <form class="order-form">
             <div id="popup-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close" ></div>
             <div class="modal__form">
                 <div class="input-wrap">
-                    <input type="text" name="as" id="name" required placeholder="Имя" class="input-text">
+                    <label for="name-text"></label>
+                    <input type="text" name="as" id="name-text" required placeholder="Введите имя" class="input-text">
                     <div class="popup-error-message"></div>
                 </div>
                 <div class="input-wrap">
                     <select id="select" type="text" required class="input-text">
+                        <option>Выберите место</option>
                         <option>Выбор 1</option>
                         <option>Выбор 2</option>
                         <option>Выбор 3</option>
+                        <option>Выбор 4</option>
+                        <option>Выбор 5</option>
+                        <option>Выбор 6</option>
+                        <option>Выбор 7</option>
+                        <option>Выбор 8</option>
+                        <option>Выбор 9</option>
+                        <option>Выбор 10</option>
                     </select>
-                </div>
-                <div class="input-wrap">
-                    <label><input type="checkbox" name="agree" id="agree">Я согласен на обработку персональных данных</label>
                     <div class="popup-error-message"></div>
                 </div>
                 <div class="input-wrap">
+                    <label for="agree"></label>
+                    <input type="checkbox" name="agree" id="agree">Я согласен на обработку персональных данных
+                    <div class="popup-error-message"></div>
+                </div>
+                <div class="input-wrap">
+                    <label for="submit"></label>
                     <input type="submit" value="заказать" class="button1" id="submit">
                 </div>
             </div>
         </form>
     </div>
+    <!-- заказ билета -->
     <div id="booking-form" class="booking hidden">
-        <form action="order.php" class="booking-form">
-            <div id="booking-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close" ></div>
+        <form action="order.php" class="booking-form" id="orderFormPlase">
+            <div id="booking-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close"></div>
             <div class="modal-form">
                 <div>
                     Название фильма: <span id="orderFilmName"></span>
@@ -247,31 +266,61 @@
             </div>
             <div class="modal-input">
                 <div>
-                    <label for="price"></label>
-                    <input type="number" id="sendOrder" name="tentacles">
+                    <label for="phone">телефон</label>
+                    <input type="tel" name="phone" id="phone" placeholder="+7(999)-999-99-99">
+                    <p class="popup-error-message"></p>
                 </div>
                 <div>
-                    <label for="phone"></label>
-                    <input type="tel" id="phone" name="phone" pattern="[+7(999)-999-99-99]" placeholder="+7(999)-999-99-99"> 
-                </div>
-                <div>
-                    <input type="text" name="name" placeholder="Введите имя">
+                    <label for="text-name">Имя</label>
+                    <input type="text" name="name" id="text-name" placeholder="Введите имя">
+                    <p class="popup-error-message"></p>
                 </div>
             </div> 
             <div id="cinema-tickets" class="cinema-tickets">
                 <div class="square"></div>
             </div>
+            <div class="tickets-error error">
+                <p class="popup-error-message"></p>
+            </div>
             <div>
-                <input type="submit" name="name-submit" value="заказать" class="button2">
+                <label for="sendOrder"></label>
+                <input type="submit" name="name-submit" value="заказать" class="button2" id="sendOrder">
             </div>
         </form>
     </div>
+    <!-- спасибо -->
+    <div id="purchase" class="booking hidden">
+        <form action="order.php" class="purchase-form">
+            <div id="purchase-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close"></div>
+            <div>
+                <h3>Спасибо за покупку!</h3>
+            </div>
+        </form>
+    </div>
+    <!-- Модальное окно выбора города -->
+    <div id="choose_city" class="booking hidden">
+        <form action="order.php" class="modal-content">
+            <div id="purchase-close" class="close"><img class="popup-close_img" src="img/close.svg" alt="close"></div>
+            <div class="modal-header">
+                <p class="modal-title">Ваш город</p>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <input class="st-input" type="text" name="citi">
+                </div>
+                <div class="search_result"></div>
+            </div>
+            <div class="modal-footer"></div>
+        </form>
+    </div>
+    <div class="ajax-loader"></div>
 
     <script src="js/jquery.js"></script>
     <script src="js/plugins/owlcarousel/js/owl.carousel.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script type="text/babel" src="js/script.js"></script>
-    <script type="text/babel" src="js/dop.films.js"></script>   
+    <script type="text/babel" src="js/48.js"></script> 
+    <script type="text/babel" src="js/ajax.js"></script>  
 </body>
 
-</html> 
+</html>

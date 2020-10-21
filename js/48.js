@@ -13,7 +13,7 @@ const mock = [
         behance: "https://www.behance.net",
         price: 200,
         room: 0,
-        tickets: [5, 6]
+        tickets: [5, 6, 10]
     },
     {
         name: "Собачья жизнь 2",
@@ -29,7 +29,7 @@ const mock = [
         behance: "https://www.behance.net",
         price: 300,
         room: 1,
-        tickets: [10, 8]
+        tickets: [1, 2, 3, 11]
     },
     {
         name: "История игрушек 4",
@@ -43,9 +43,9 @@ const mock = [
         fb: "https://fb.com",
         twitter: "https://twitter.com",
         behance: "https://www.behance.net",
-        price: 500,
+        price: 300,
         room: 2,
-        tickets: [1, 9, 4]
+        tickets: [4, 7]
     },
     {
         name: "Люди в чёрном: Интернэшнл",
@@ -59,9 +59,9 @@ const mock = [
         fb: "https://fb.com",
         twitter: "https://twitter.com",
         behance: "https://www.behance.net",
-        price: 700,
+        price: 350,
         room: 1,
-        tickets: [3, 8, 9, 5]
+        tickets: [6, 9]
     }
 ];
 
@@ -106,12 +106,12 @@ const rooms = [
     {
         id: 1,
         name: 'L',
-        count: 15
+        count: 20
     },
     {
         id: 2,
         name: 'XL',
-        count: 20
+        count: 30
     }
 ];
 
@@ -247,30 +247,40 @@ const film = {
         let countTicket = document.getElementById('orderFilmCountTicket');
         let orderFilmTotalPrice = document.getElementById('orderFilmTotalPrice');
         cinemaTickets.innerHTML = '';
-        
+
         for(let i = 1; i < count + 1; i++) {
             let element = document.createElement('div');
+            console.log(element);
             element.classList.add('square');
-            element.oncontextmenu = function() {
-                console.log(filmsHire, i);
-                alert(filmsHire[indexFilm].price);
-            };
+            // Правая кнопка мыши
+            element.addEventListener("contextmenu", (event) => {
+                    event.preventDefault();
+                    console.log(filmsHire, i);
+                    alert(filmsHire[indexFilm].price);
+            });
+            element.addEventListener("mouseover", function (event) {
+                event.target.classList.add('clic'); 
+            });
+            element.addEventListener("mouseout", function (event) {
+                event.target.classList.remove('clic'); 
+            }); 
             // Проверка на уже забронированный билет
             this.tickets.forEach(item => {
                 if(item === i) {
-                    element.classList.add('bought');
+                    element.classList.add('busy');
                 }
             });
             element.innerHTML = i;
+            element.setAttribute('data-plase', i);
             cinemaTickets.append(element),
             element.onclick = event => {
-                if(event.target.classList.contains('bought')) {
+                if(event.target.classList.contains('busy')) {
                     alert('место забронировано');
                 } else if (!event.target.classList.contains('reserve')) {
-                    event.target.classList.add('clic', 'bought');
+                    event.target.classList.add('reserve');
                     countTicket.innerHTML = parseInt(countTicket.innerHTML) + 1;
                     orderFilmTotalPrice.innerHTML = this.price * parseInt(countTicket.innerHTML);
-                } else {
+                }  else {
                     event.target.classList.remove('reserve');
                     countTicket.innerHTML = parseInt(countTicket.innerHTML) - 1;
                     orderFilmTotalPrice.innerHTML = this.price * parseInt(countTicket.innerHTML);
@@ -369,27 +379,28 @@ for (let i = 0; i < filmsHire.length; i++) {
     tableDOM.appendChild(tr); //добавляем в DOM элемент таблицы DOM элемент строки с фильмом
 }
 
-// Закрытие модального окна
-/*** РАЗОБРАТЬ Event Handler */
+
 let orderForm = document.getElementById('booking-form');
 let closeOrderForm = document.getElementById('booking-close');
+let Purchase = document.getElementById('purchase');
+let closePurchase = document.getElementById('purchase-close');
 
+// Закрытие модального окна
+/*** РАЗОБРАТЬ Event Handler */
 closeOrderForm.onclick = function () {
-  orderForm.style.display = 'none';
+    orderForm.style.display = 'none';
+    
 };
-
-// Валидация ввода имени
-/** РАЗОБРАТЬ Event Handler */
-let sendOrder = document.getElementById('sendOrder');
-sendOrder.onclick = function () {
-  let orderClinetName = document.getElementById('orderClinetName');
-
-  if (orderClinetName.value) {
-    orderClinetName.style.border = '1px solid #bebebe';
-  } else {
-    orderClinetName.style.border = '2px solid red';
-  }
+closePurchase.onclick = function () {
+    Purchase.style.display = 'none';
+    
 };
+// Закрытие по кнопке Esc
+window.addEventListener("keydown", function (event) {
+    if ( event.keyCode == 27 ) {
+        orderForm.style.display = 'none';
+    } 
+});
 
 let mosaicDOM = document.getElementById("filmsNew"); // это flex контейнер, куда добавляются блоки
 for (let i = 0; i < filmsNew.length; i++) {
@@ -401,4 +412,89 @@ for (let i = 0; i < filmsNew.length; i++) {
     mosaicDOM.appendChild(div); //добавляем в DOM элемент таблицы DOM элемент строки с фильмом
 }
 
+// Обработка формы
+function checkCorrectPhoneNumber (number) {
+    return true
+}
+const clearError = (element) => {
+    let i = 0;
+    while( i < element.getElementsByClassName('popup-error-message').length) {
+        element.getElementsByClassName('popup-error-message')[i].parentNode.classList.remove('error');
+        element.getElementsByClassName('popup-error-message')[i].innerHTML = '';
+        i++;
+    }
+}
 
+orderFormPlase.addEventListener('submit', event => {
+    console.log (orderFormPlase);
+    const setError = ($el, error) => {
+        $el.parentNode.classList.add('error');
+        $el.parentNode.getElementsByClassName('popup-error-message')[0].innerHTML = error;
+    }
+    event.preventDefault();
+    clearError(orderFormPlase);
+    
+    const fields = document.querySelectorAll('#text-name, #phone');
+    let error = false;
+    const data = {
+        name: '',
+        phone: '',
+        places: []
+    };
+    for (let i = 0; i < fields.length; i++) {
+        switch(fields[i].getAttribute('name')){
+            case 'name':
+                if(!checkInput(fields[i].value)){
+                    setError(fields[i], 'Заполните поле имя');
+                    error = true;
+                    break;
+                } 
+                data.name = fields[i].value; 
+                break;            
+            case 'phone':
+                if(!checkInput(fields[i].value)){
+                    setError(fields[i], 'Заполните поле телефон');
+                    error = true;
+                    break;
+                } else {
+                    if(!checkCorrectPhoneNumber(fields[i].value)){
+                        setError(fields[i], 'Введите корректный номер телефона');
+                        error = true;
+                        break;
+                    }
+                    data.phone = fields[i].value;    
+                }
+                break;
+            default:
+                console.error('Поле не опознано');
+        }
+    }
+    // Проверяем выбранные места
+    // На ошибку
+    if (orderFormPlase.getElementsByClassName('reserve').length < 1) {
+        error = true;
+        orderFormPlase.getElementsByClassName('tickets-error')[0].classList.add('error');
+        orderFormPlase.getElementsByClassName('tickets-error')[0].getElementsByTagName('p')[0].innerHTML = 'Выберете место';
+    } else {
+        // На то что места заняты
+        let places = [];
+        for (let i = 0; i < orderFormPlase.getElementsByClassName('reserve').length; i++) {
+            places.push(orderFormPlase.getElementsByClassName('reserve')[i].getAttribute('data-place'));
+        }
+        data.places = places;
+    }
+    // Прекратить отправку формы если есть ошибка
+    if(error) {
+        return
+    }
+
+    // Сформируем объект для отправки на сервер и отправим
+    const sendFormButton = document.getElementById('sendOrder');
+    sendFormButton.setAttribute('disabled', 'true');
+
+    setTimeout(() => {
+        orderForm.style.display = 'none';
+        orderForm.classList.remove('hidden');
+        Purchase.classList.remove('hidden');
+    }, 3000);
+})
