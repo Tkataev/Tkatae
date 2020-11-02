@@ -1,0 +1,32 @@
+
+.owl-nav button {
+    position: absolute;
+    bottom: 5px;
+    margin-top: -15px;
+    height: 100%;
+    outline: none;
+    width: 30px;
+    border-radius: 15px;
+    border: 1px solid black !important;;
+}
+.owl-nav button:hover{
+    background-color: rgb(230,230,230,0.5) !important;
+}
+.owl-nav button.owl-prev {
+    left: -15px;
+}
+.owl-nav button.owl-next {
+    right: -15px;
+}
+.owl-nav button span {
+    font-size: 30px;
+    color: gray;
+}
+.owl-nav button span:hover {
+    font-size: 40px;
+    color: black;
+}
+.owl-stage-outer{
+    width: calc(100% - 40px);
+    margin-left: 20px;
+}
